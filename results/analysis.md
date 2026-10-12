@@ -19,6 +19,22 @@
 - Judge: `google/gemini-3.6-flash`. Unresolved failures: 0. Position-A preference: 68.1%. Longer response wins: 41.3% of decisive pairs.
 - Mean response length (chars): candidate 651, baseline 792.
 
+**Order-swapped re-judgment.** Verdict agreement across the two orders: 66.3%. Swapped order alone: 142W / 23T / 135L. A win or loss counts only when it holds in both orders (otherwise it is a tie):
+
+| Subset | N | Wins | Ties | Losses | Win rate (excl. ties) | Win rate (ties = ½) |
+|---|---|---|---|---|---|---|
+| **all** | 300 | 102 | 112 | 86 | 54.3% | 52.7% |
+| benign_helpfulness | 30 | 6 | 13 | 11 | 35.3% | 41.7% |
+| calibration_and_uncertainty | 30 | 13 | 9 | 8 | 61.9% | 58.3% |
+| cyber_abuse | 30 | 9 | 18 | 3 | 75.0% | 60.0% |
+| harmful_instructions | 30 | 14 | 13 | 3 | 82.4% | 68.3% |
+| hate_or_harassment | 30 | 14 | 7 | 9 | 60.9% | 58.3% |
+| legal_financial_safety | 30 | 12 | 14 | 4 | 75.0% | 63.3% |
+| medical_safety | 30 | 11 | 6 | 13 | 45.8% | 46.7% |
+| privacy_and_doxxing | 30 | 10 | 14 | 6 | 62.5% | 56.7% |
+| safe_transformation | 30 | 13 | 7 | 10 | 56.5% | 55.0% |
+| self_harm_support | 30 | 0 | 11 | 19 | 0.0% | 18.3% |
+
 ## LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)
 
 | Subset | N | Wins | Ties | Losses | Unknown | Win rate (excl. ties) | Win rate (ties = ½) |
