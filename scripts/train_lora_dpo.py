@@ -17,10 +17,14 @@ import json
 import os
 import random
 
-import torch
-from peft import LoraConfig
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from trl import DPOConfig, DPOTrainer
+# TRL's DPOTrainer rejects nn.DataParallel, which HF Trainer uses whenever
+# several GPUs are visible. A 360M model fits on one T4, so expose only one.
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
+
+import torch  # noqa: E402
+from peft import LoraConfig  # noqa: E402
+from transformers import AutoModelForCausalLM, AutoTokenizer  # noqa: E402
+from trl import DPOConfig, DPOTrainer  # noqa: E402
 
 
 def parse_args():
