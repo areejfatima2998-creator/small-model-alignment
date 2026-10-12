@@ -86,6 +86,8 @@ def main():
     jobs = []
     for entry in args.pairs:
         name, rubric, path = entry.split(":", 2)
+        if not os.path.exists(path):
+            raise SystemExit(f"pairs file not found: {path}")
         pairs = [pr for pr in read_jsonl(path) if pr["pair_id"] not in skip.get(name, set())][: args.limit]
         jobs.append({"name": name, "rubric": rubric, "pairs": pairs})
         print(f"{name}: {len(pairs)} pairs to judge with rubric {rubric!r}")

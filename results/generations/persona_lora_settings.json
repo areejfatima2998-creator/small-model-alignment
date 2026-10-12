@@ -1,0 +1,17 @@
+{
+ "model_path": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "adapter_path": "outputs/lora_dpo/adapter",
+ "eval_set": "eval_sets/persona_style_prompts.json",
+ "generator": "smollm2-360m-lora-dpo",
+ "prompt_format": "chat",
+ "max_new_tokens": 384,
+ "batch_size": 8,
+ "do_sample": false,
+ "temperature": 1.0,
+ "top_p": 1.0,
+ "repetition_penalty": 1.1,
+ "no_repeat_ngram_size": 0,
+ "limit": null,
+ "device": "cuda:1",
+ "seed": 42
+}
