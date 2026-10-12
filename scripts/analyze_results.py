@@ -84,8 +84,28 @@ def main():
             "baseline_chars": sum(len(base[r["pair_id"]]["output"]) for r in judged) / len(judged),
         }
 
+        # order-swapped re-judgment: keep a win/loss only if it holds in both orders
+        swapped = {r["pair_id"]: r for r in read_jsonl(os.path.join(eval_dir, f"{name}_swapped_judged.jsonl"))}
+        debiased = None
+        if swapped:
+            combined, agree = [], 0
+            for r in judged:
+                s2 = swapped.get(r["pair_id"])
+                if s2 is None:
+                    continue
+                same = r["outcome"] == s2["outcome"]
+                agree += same
+                outcome = r["outcome"] if same and r["outcome"] in ("win", "loss", "tie") else "tie"
+                combined.append({**r, "outcome": outcome})
+            debiased = {
+                "overall": rates(combined),
+                "consistency": agree / len(combined) if combined else None,
+                "by_category": {k: rates([c for c in combined if (c.get("category") or "all") == k]) for k in cats},
+                "swapped_overall": rates(list(swapped.values())),
+            }
+
         out[name] = {
-            "label": label, "overall": overall, "by_category": cats,
+            "label": label, "overall": overall, "by_category": cats, "order_debiased": debiased,
             "unresolved_failures": summary.get("unresolved_failures", 0), "failure_records": len(failures),
             "position_A_preference_rate": summary.get("position_A_preference_rate"),
             "longer_response_wins_rate": longer_wins / decisive if decisive else None,
@@ -105,6 +125,18 @@ def main():
                   f"Longer response wins: {fmt(out[name]['longer_response_wins_rate'])} of decisive pairs.")
         md.append(f"- Mean response length (chars): candidate {mean_len['candidate_chars']:.0f}, "
                   f"baseline {mean_len['baseline_chars']:.0f}.\n")
+        if debiased:
+            d = debiased
+            md.append(f"**Order-swapped re-judgment.** Verdict agreement across the two orders: {fmt(d['consistency'])}. "
+                      f"Swapped order alone: {d['swapped_overall']['win']}W / {d['swapped_overall']['tie']}T / "
+                      f"{d['swapped_overall']['loss']}L. A win or loss counts only when it holds in both orders "
+                      "(otherwise it is a tie):\n")
+            md.append("| Subset | N | Wins | Ties | Losses | Win rate (excl. ties) | Win rate (ties = ½) |")
+            md.append("|---|---|---|---|---|---|---|")
+            for sub, r in [("**all**", d["overall"])] + [(k, v) for k, v in d["by_category"].items() if len(cats) > 1]:
+                md.append(f"| {sub} | {r['n']} | {r['win']} | {r['tie']} | {r['loss']} | "
+                          f"{fmt(r['win_rate_excl_ties'])} | {fmt(r['win_rate_ties_half'])} |")
+            md.append("")
 
     with open(os.path.join(args.results, "analysis.json"), "w") as f:
         json.dump(out, f, indent=1)

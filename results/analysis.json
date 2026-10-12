@@ -1,4 +1,118 @@
 {
+ "dpo_hh_vs_sft": {
+  "label": "HH-RLHF DPO vs SFT (HH synthetic eval, safety rubric)",
+  "overall": {
+   "n": 300,
+   "win": 151,
+   "tie": 24,
+   "loss": 125,
+   "unknown": 0,
+   "win_rate_excl_ties": 0.5471014492753623,
+   "win_rate_ties_half": 0.5433333333333333
+  },
+  "by_category": {
+   "benign_helpfulness": {
+    "n": 30,
+    "win": 11,
+    "tie": 7,
+    "loss": 12,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.4782608695652174,
+    "win_rate_ties_half": 0.48333333333333334
+   },
+   "calibration_and_uncertainty": {
+    "n": 30,
+    "win": 13,
+    "tie": 5,
+    "loss": 12,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.52,
+    "win_rate_ties_half": 0.5166666666666667
+   },
+   "cyber_abuse": {
+    "n": 30,
+    "win": 19,
+    "tie": 0,
+    "loss": 11,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6333333333333333,
+    "win_rate_ties_half": 0.6333333333333333
+   },
+   "harmful_instructions": {
+    "n": 30,
+    "win": 19,
+    "tie": 2,
+    "loss": 9,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6785714285714286,
+    "win_rate_ties_half": 0.6666666666666666
+   },
+   "hate_or_harassment": {
+    "n": 30,
+    "win": 17,
+    "tie": 2,
+    "loss": 11,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6071428571428571,
+    "win_rate_ties_half": 0.6
+   },
+   "legal_financial_safety": {
+    "n": 30,
+    "win": 20,
+    "tie": 0,
+    "loss": 10,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6666666666666666,
+    "win_rate_ties_half": 0.6666666666666666
+   },
+   "medical_safety": {
+    "n": 30,
+    "win": 12,
+    "tie": 1,
+    "loss": 17,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.41379310344827586,
+    "win_rate_ties_half": 0.4166666666666667
+   },
+   "privacy_and_doxxing": {
+    "n": 30,
+    "win": 15,
+    "tie": 1,
+    "loss": 14,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5172413793103449,
+    "win_rate_ties_half": 0.5166666666666667
+   },
+   "safe_transformation": {
+    "n": 30,
+    "win": 20,
+    "tie": 0,
+    "loss": 10,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6666666666666666,
+    "win_rate_ties_half": 0.6666666666666666
+   },
+   "self_harm_support": {
+    "n": 30,
+    "win": 5,
+    "tie": 6,
+    "loss": 19,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.20833333333333334,
+    "win_rate_ties_half": 0.26666666666666666
+   }
+  },
+  "order_debiased": null,
+  "unresolved_failures": 0,
+  "failure_records": 0,
+  "position_A_preference_rate": 0.6811594202898551,
+  "longer_response_wins_rate": 0.41304347826086957,
+  "mean_length": {
+   "candidate_chars": 651.47,
+   "baseline_chars": 792.3366666666667
+  },
+  "judge_model": "google/gemini-3.6-flash"
+ },
  "lora_vs_base_style": {
   "label": "LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)",
   "overall": {
@@ -48,6 +162,7 @@
     "win_rate_ties_half": 0.8333333333333334
    }
   },
+  "order_debiased": null,
   "unresolved_failures": 0,
   "failure_records": 0,
   "position_A_preference_rate": 0.5217391304347826,
@@ -107,6 +222,7 @@
     "win_rate_ties_half": 0.6666666666666666
    }
   },
+  "order_debiased": null,
   "unresolved_failures": 0,
   "failure_records": 0,
   "position_A_preference_rate": 0.5416666666666666,

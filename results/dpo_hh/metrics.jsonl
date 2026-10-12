@@ -1,0 +1,103 @@
+{"step": 0, "split": "val", "val_loss": 0.6932460286617279, "val_reward_acc": 0.4830000102519989, "val_reward_margin": -0.00018494641699362546, "val_chosen_reward": 0.00016607134602963924, "val_rejected_reward": 0.00035101777757517993, "elapsed_s": 82.1}
+{"step": 5, "split": "train", "train_loss": 0.6910935970023274, "train_reward_acc": 0.49375, "train_reward_margin": 0.026804838887255756, "grad_norm": 40.7720947265625, "elapsed_s": 112.9}
+{"step": 10, "split": "train", "train_loss": 0.6988665726967156, "train_reward_acc": 0.5125, "train_reward_margin": 0.03051373929483816, "grad_norm": 43.827903747558594, "elapsed_s": 144.1}
+{"step": 15, "split": "train", "train_loss": 0.6774782637134195, "train_reward_acc": 0.54375, "train_reward_margin": 0.07552194588934072, "grad_norm": 44.33760070800781, "elapsed_s": 174.9}
+{"step": 20, "split": "train", "train_loss": 0.7051680478267371, "train_reward_acc": 0.49375, "train_reward_margin": 0.03197850972646847, "grad_norm": 47.117286682128906, "elapsed_s": 205.9}
+{"step": 25, "split": "train", "train_loss": 0.6708590201102197, "train_reward_acc": 0.60625, "train_reward_margin": 0.11035009168554097, "grad_norm": 42.63884353637695, "elapsed_s": 236.3}
+{"step": 30, "split": "train", "train_loss": 0.6854927351698279, "train_reward_acc": 0.60625, "train_reward_margin": 0.07139102066284977, "grad_norm": 40.93635940551758, "elapsed_s": 267.4}
+{"step": 35, "split": "train", "train_loss": 0.67542818877846, "train_reward_acc": 0.59375, "train_reward_margin": 0.0820991393760778, "grad_norm": 39.75469970703125, "elapsed_s": 297.0}
+{"step": 40, "split": "train", "train_loss": 0.6618091026321054, "train_reward_acc": 0.63125, "train_reward_margin": 0.12499889445025474, "grad_norm": 41.44548797607422, "elapsed_s": 327.8}
+{"step": 45, "split": "train", "train_loss": 0.7002581127453595, "train_reward_acc": 0.50625, "train_reward_margin": 0.03796485201455653, "grad_norm": 43.18467330932617, "elapsed_s": 358.2}
+{"step": 50, "split": "train", "train_loss": 0.6279085779562592, "train_reward_acc": 0.625, "train_reward_margin": 0.19619553646771237, "grad_norm": 41.04281234741211, "elapsed_s": 389.1}
+{"step": 55, "split": "train", "train_loss": 0.6778311521746219, "train_reward_acc": 0.53125, "train_reward_margin": 0.10771950372727587, "grad_norm": 42.90931701660156, "elapsed_s": 420.2}
+{"step": 60, "split": "train", "train_loss": 0.6372060212306678, "train_reward_acc": 0.63125, "train_reward_margin": 0.1900182462995872, "grad_norm": 43.42410659790039, "elapsed_s": 451.1}
+{"step": 65, "split": "train", "train_loss": 0.6847493169363588, "train_reward_acc": 0.55625, "train_reward_margin": 0.0903832311509177, "grad_norm": 47.42136001586914, "elapsed_s": 482.5}
+{"step": 70, "split": "train", "train_loss": 0.6454390121158212, "train_reward_acc": 0.63125, "train_reward_margin": 0.17669287957251073, "grad_norm": 42.6318359375, "elapsed_s": 514.0}
+{"step": 75, "split": "train", "train_loss": 0.6685901483520865, "train_reward_acc": 0.54375, "train_reward_margin": 0.12526505742571317, "grad_norm": 40.38497543334961, "elapsed_s": 544.8}
+{"step": 80, "split": "train", "train_loss": 0.6331172564066947, "train_reward_acc": 0.59375, "train_reward_margin": 0.2096903805853799, "grad_norm": 31.47039031982422, "elapsed_s": 575.5}
+{"step": 85, "split": "train", "train_loss": 0.6542860184796154, "train_reward_acc": 0.6125, "train_reward_margin": 0.1523809910286218, "grad_norm": 44.41981887817383, "elapsed_s": 606.9}
+{"step": 90, "split": "train", "train_loss": 0.6749304146505892, "train_reward_acc": 0.59375, "train_reward_margin": 0.13520678975619377, "grad_norm": 44.33690643310547, "elapsed_s": 637.7}
+{"step": 95, "split": "train", "train_loss": 0.6648814402520656, "train_reward_acc": 0.56875, "train_reward_margin": 0.14909085030667485, "grad_norm": 43.13410949707031, "elapsed_s": 667.9}
+{"step": 100, "split": "train", "train_loss": 0.6466788044199347, "train_reward_acc": 0.65, "train_reward_margin": 0.15897731499280782, "grad_norm": 42.84067916870117, "elapsed_s": 698.0}
+{"step": 100, "split": "val", "val_loss": 0.648485160112381, "val_reward_acc": 0.6299999952316284, "val_reward_margin": 0.19240717589855194, "val_chosen_reward": -0.3135724365711212, "val_rejected_reward": -0.5059796571731567, "elapsed_s": 741.9}
+{"step": 100, "event": "saved_best", "val_reward_acc": 0.6299999952316284, "elapsed_s": 743.4}
+{"step": 105, "split": "train", "train_loss": 0.6815962675958872, "train_reward_acc": 0.525, "train_reward_margin": 0.11235443118494004, "grad_norm": 43.66217041015625, "elapsed_s": 774.5}
+{"step": 110, "split": "train", "train_loss": 0.6682248197495937, "train_reward_acc": 0.5875, "train_reward_margin": 0.15149656215216964, "grad_norm": 44.21147918701172, "elapsed_s": 805.4}
+{"step": 115, "split": "train", "train_loss": 0.6347630309406668, "train_reward_acc": 0.65, "train_reward_margin": 0.2129502268275246, "grad_norm": 45.74634552001953, "elapsed_s": 836.1}
+{"step": 120, "split": "train", "train_loss": 0.6304843195248395, "train_reward_acc": 0.6375, "train_reward_margin": 0.2242489696945995, "grad_norm": 37.543006896972656, "elapsed_s": 866.3}
+{"step": 125, "split": "train", "train_loss": 0.715351716382429, "train_reward_acc": 0.55, "train_reward_margin": 0.06969641539035365, "grad_norm": 45.097591400146484, "elapsed_s": 897.5}
+{"step": 130, "split": "train", "train_loss": 0.6651060068979859, "train_reward_acc": 0.575, "train_reward_margin": 0.1538210927275941, "grad_norm": 46.25537109375, "elapsed_s": 928.2}
+{"step": 135, "split": "train", "train_loss": 0.6190267683938145, "train_reward_acc": 0.6375, "train_reward_margin": 0.2600322342477739, "grad_norm": 39.55121994018555, "elapsed_s": 959.0}
+{"step": 140, "split": "train", "train_loss": 0.5939508280251176, "train_reward_acc": 0.675, "train_reward_margin": 0.31060967058874667, "grad_norm": 39.046268463134766, "elapsed_s": 989.6}
+{"step": 145, "split": "train", "train_loss": 0.6140481295529753, "train_reward_acc": 0.66875, "train_reward_margin": 0.2684078875463456, "grad_norm": 42.92355728149414, "elapsed_s": 1020.3}
+{"step": 150, "split": "train", "train_loss": 0.6928270407021045, "train_reward_acc": 0.525, "train_reward_margin": 0.10356576547492295, "grad_norm": 42.13988494873047, "elapsed_s": 1050.4}
+{"step": 155, "split": "train", "train_loss": 0.6395664094947279, "train_reward_acc": 0.59375, "train_reward_margin": 0.21856933357194067, "grad_norm": 53.05606460571289, "elapsed_s": 1080.9}
+{"step": 160, "split": "train", "train_loss": 0.7069377116858959, "train_reward_acc": 0.55625, "train_reward_margin": 0.10403109402395785, "grad_norm": 43.400978088378906, "elapsed_s": 1111.3}
+{"step": 165, "split": "train", "train_loss": 0.6129498604219407, "train_reward_acc": 0.65, "train_reward_margin": 0.2711639988236129, "grad_norm": 37.92766571044922, "elapsed_s": 1141.0}
+{"step": 170, "split": "train", "train_loss": 0.6684083900880069, "train_reward_acc": 0.58125, "train_reward_margin": 0.1491347841685638, "grad_norm": 41.272151947021484, "elapsed_s": 1170.8}
+{"step": 175, "split": "train", "train_loss": 0.6723905742168427, "train_reward_acc": 0.59375, "train_reward_margin": 0.16823898977600038, "grad_norm": 44.59092330932617, "elapsed_s": 1201.5}
+{"step": 180, "split": "train", "train_loss": 0.6399026631843299, "train_reward_acc": 0.63125, "train_reward_margin": 0.2556153726414777, "grad_norm": 44.02880859375, "elapsed_s": 1232.2}
+{"step": 185, "split": "train", "train_loss": 0.6540367746958509, "train_reward_acc": 0.61875, "train_reward_margin": 0.18301125903381035, "grad_norm": 40.757198333740234, "elapsed_s": 1262.9}
+{"step": 190, "split": "train", "train_loss": 0.6671653997618705, "train_reward_acc": 0.59375, "train_reward_margin": 0.14403466302901508, "grad_norm": 53.976951599121094, "elapsed_s": 1294.3}
+{"step": 195, "split": "train", "train_loss": 0.6599143276922405, "train_reward_acc": 0.60625, "train_reward_margin": 0.19169484577141702, "grad_norm": 41.22688293457031, "elapsed_s": 1324.8}
+{"step": 200, "split": "train", "train_loss": 0.6133846110664308, "train_reward_acc": 0.66875, "train_reward_margin": 0.2627696607261896, "grad_norm": 36.582977294921875, "elapsed_s": 1354.8}
+{"step": 200, "split": "val", "val_loss": 0.6387261917591095, "val_reward_acc": 0.6470000147819519, "val_reward_margin": 0.24383951723575592, "val_chosen_reward": -0.3726425766944885, "val_rejected_reward": -0.616482138633728, "elapsed_s": 1398.7}
+{"step": 200, "event": "saved_best", "val_reward_acc": 0.6470000147819519, "elapsed_s": 1400.8}
+{"step": 205, "split": "train", "train_loss": 0.6666240054182708, "train_reward_acc": 0.575, "train_reward_margin": 0.18116621626541018, "grad_norm": 37.84727096557617, "elapsed_s": 1432.3}
+{"step": 210, "split": "train", "train_loss": 0.684701097710058, "train_reward_acc": 0.56875, "train_reward_margin": 0.14297367297112942, "grad_norm": 38.7815055847168, "elapsed_s": 1463.5}
+{"step": 215, "split": "train", "train_loss": 0.6627071736380458, "train_reward_acc": 0.5875, "train_reward_margin": 0.14523510691942648, "grad_norm": 33.36122512817383, "elapsed_s": 1494.2}
+{"step": 220, "split": "train", "train_loss": 0.6197450796607882, "train_reward_acc": 0.6625, "train_reward_margin": 0.24526663757860662, "grad_norm": 39.58000946044922, "elapsed_s": 1524.5}
+{"step": 225, "split": "train", "train_loss": 0.6419971138704568, "train_reward_acc": 0.61875, "train_reward_margin": 0.2096648693026509, "grad_norm": 42.08677673339844, "elapsed_s": 1555.4}
+{"step": 230, "split": "train", "train_loss": 0.6385293060913682, "train_reward_acc": 0.65625, "train_reward_margin": 0.24024511561729014, "grad_norm": 43.31135940551758, "elapsed_s": 1586.5}
+{"step": 235, "split": "train", "train_loss": 0.6774131951853632, "train_reward_acc": 0.58125, "train_reward_margin": 0.1538184898905456, "grad_norm": 44.56084060668945, "elapsed_s": 1617.3}
+{"step": 240, "split": "train", "train_loss": 0.6283128601498902, "train_reward_acc": 0.625, "train_reward_margin": 0.2346928552724421, "grad_norm": 37.43479537963867, "elapsed_s": 1648.1}
+{"step": 245, "split": "train", "train_loss": 0.628519888408482, "train_reward_acc": 0.61875, "train_reward_margin": 0.24228383102454246, "grad_norm": 36.82752990722656, "elapsed_s": 1679.0}
+{"step": 250, "split": "train", "train_loss": 0.6459223688114435, "train_reward_acc": 0.60625, "train_reward_margin": 0.2096480603562668, "grad_norm": 40.94233322143555, "elapsed_s": 1710.1}
+{"step": 255, "split": "train", "train_loss": 0.6613536359276623, "train_reward_acc": 0.6, "train_reward_margin": 0.16308717064093797, "grad_norm": 39.4537353515625, "elapsed_s": 1740.7}
+{"step": 260, "split": "train", "train_loss": 0.669628441426903, "train_reward_acc": 0.6, "train_reward_margin": 0.15804296035785229, "grad_norm": 41.592018127441406, "elapsed_s": 1771.3}
+{"step": 265, "split": "train", "train_loss": 0.6067552897147834, "train_reward_acc": 0.6875, "train_reward_margin": 0.29878382972674444, "grad_norm": 45.2581901550293, "elapsed_s": 1801.3}
+{"step": 270, "split": "train", "train_loss": 0.678890371043235, "train_reward_acc": 0.55625, "train_reward_margin": 0.13030759093817323, "grad_norm": 41.29825973510742, "elapsed_s": 1831.6}
+{"step": 275, "split": "train", "train_loss": 0.6671103223226964, "train_reward_acc": 0.6125, "train_reward_margin": 0.18070674783084542, "grad_norm": 37.98625564575195, "elapsed_s": 1862.6}
+{"step": 280, "split": "train", "train_loss": 0.6454556941287592, "train_reward_acc": 0.6375, "train_reward_margin": 0.22763717388734223, "grad_norm": 33.99784851074219, "elapsed_s": 1893.2}
+{"step": 285, "split": "train", "train_loss": 0.6350119744427503, "train_reward_acc": 0.625, "train_reward_margin": 0.22995213167741896, "grad_norm": 46.63383102416992, "elapsed_s": 1924.3}
+{"step": 290, "split": "train", "train_loss": 0.6381868976633995, "train_reward_acc": 0.6625, "train_reward_margin": 0.21186581638175994, "grad_norm": 36.83531188964844, "elapsed_s": 1955.0}
+{"step": 295, "split": "train", "train_loss": 0.6392746480647474, "train_reward_acc": 0.63125, "train_reward_margin": 0.2603874055668712, "grad_norm": 42.06863021850586, "elapsed_s": 1985.9}
+{"step": 300, "split": "train", "train_loss": 0.6572993227746338, "train_reward_acc": 0.58125, "train_reward_margin": 0.20933608529157938, "grad_norm": 36.34238815307617, "elapsed_s": 2016.0}
+{"step": 300, "split": "val", "val_loss": 0.6337437522411347, "val_reward_acc": 0.6370000243186951, "val_reward_margin": 0.2567962110042572, "val_chosen_reward": -0.1816759705543518, "val_rejected_reward": -0.4384721517562866, "elapsed_s": 2059.9}
+{"step": 305, "split": "train", "train_loss": 0.651296358043328, "train_reward_acc": 0.55, "train_reward_margin": 0.20906784408725798, "grad_norm": 45.977230072021484, "elapsed_s": 2091.0}
+{"step": 310, "split": "train", "train_loss": 0.6158044365700335, "train_reward_acc": 0.68125, "train_reward_margin": 0.29336032844148574, "grad_norm": 39.409236907958984, "elapsed_s": 2121.6}
+{"step": 315, "split": "train", "train_loss": 0.6377407290041447, "train_reward_acc": 0.6125, "train_reward_margin": 0.21341097843833268, "grad_norm": 40.957393646240234, "elapsed_s": 2152.5}
+{"step": 320, "split": "train", "train_loss": 0.6188112521544099, "train_reward_acc": 0.6625, "train_reward_margin": 0.24112402873579414, "grad_norm": 37.65365982055664, "elapsed_s": 2182.7}
+{"step": 325, "split": "train", "train_loss": 0.6372961846645921, "train_reward_acc": 0.61875, "train_reward_margin": 0.24634456620551645, "grad_norm": 44.389862060546875, "elapsed_s": 2213.7}
+{"step": 330, "split": "train", "train_loss": 0.6272891285363584, "train_reward_acc": 0.675, "train_reward_margin": 0.26869212756864724, "grad_norm": 40.42538833618164, "elapsed_s": 2244.1}
+{"step": 335, "split": "train", "train_loss": 0.6700083856470883, "train_reward_acc": 0.5875, "train_reward_margin": 0.1775301589164883, "grad_norm": 44.817047119140625, "elapsed_s": 2274.5}
+{"step": 340, "split": "train", "train_loss": 0.6640088895685039, "train_reward_acc": 0.5375, "train_reward_margin": 0.1922356652561575, "grad_norm": 40.2745361328125, "elapsed_s": 2305.5}
+{"step": 345, "split": "train", "train_loss": 0.6925394587218762, "train_reward_acc": 0.60625, "train_reward_margin": 0.15615853061899543, "grad_norm": 40.77416229248047, "elapsed_s": 2336.5}
+{"step": 350, "split": "train", "train_loss": 0.6712985837832093, "train_reward_acc": 0.58125, "train_reward_margin": 0.15864635831676424, "grad_norm": 49.50008773803711, "elapsed_s": 2366.8}
+{"step": 355, "split": "train", "train_loss": 0.6588191998191177, "train_reward_acc": 0.6125, "train_reward_margin": 0.185388840502128, "grad_norm": 41.05449295043945, "elapsed_s": 2397.4}
+{"step": 360, "split": "train", "train_loss": 0.6683684348594398, "train_reward_acc": 0.60625, "train_reward_margin": 0.21194676518207417, "grad_norm": 35.93400955200195, "elapsed_s": 2427.1}
+{"step": 365, "split": "train", "train_loss": 0.6540594222955406, "train_reward_acc": 0.60625, "train_reward_margin": 0.19528535434510558, "grad_norm": 38.763671875, "elapsed_s": 2457.3}
+{"step": 370, "split": "train", "train_loss": 0.667814084654674, "train_reward_acc": 0.55, "train_reward_margin": 0.19028233644785358, "grad_norm": 41.39023208618164, "elapsed_s": 2488.0}
+{"step": 375, "split": "train", "train_loss": 0.6284301125910133, "train_reward_acc": 0.65625, "train_reward_margin": 0.29451418047538025, "grad_norm": 38.92361068725586, "elapsed_s": 2518.8}
+{"step": 380, "split": "train", "train_loss": 0.61142095644027, "train_reward_acc": 0.6625, "train_reward_margin": 0.30219882875680926, "grad_norm": 40.7232780456543, "elapsed_s": 2549.7}
+{"step": 385, "split": "train", "train_loss": 0.6366984310559929, "train_reward_acc": 0.64375, "train_reward_margin": 0.24655607440508903, "grad_norm": 42.66824722290039, "elapsed_s": 2580.0}
+{"step": 390, "split": "train", "train_loss": 0.6790810688631609, "train_reward_acc": 0.61875, "train_reward_margin": 0.1852609537076205, "grad_norm": 42.99333190917969, "elapsed_s": 2611.1}
+{"step": 395, "split": "train", "train_loss": 0.622467162576504, "train_reward_acc": 0.6125, "train_reward_margin": 0.2723012341419235, "grad_norm": 42.47042465209961, "elapsed_s": 2642.0}
+{"step": 400, "split": "train", "train_loss": 0.6275438352953643, "train_reward_acc": 0.65625, "train_reward_margin": 0.2848609090317041, "grad_norm": 33.82978057861328, "elapsed_s": 2672.7}
+{"step": 400, "split": "val", "val_loss": 0.6284079245626927, "val_reward_acc": 0.6499999761581421, "val_reward_margin": 0.29213690757751465, "val_chosen_reward": -0.3461214601993561, "val_rejected_reward": -0.6382583975791931, "elapsed_s": 2716.5}
+{"step": 400, "event": "saved_best", "val_reward_acc": 0.6499999761581421, "elapsed_s": 2718.5}
+{"step": 405, "split": "train", "train_loss": 0.6241992918075994, "train_reward_acc": 0.6, "train_reward_margin": 0.31352031470742076, "grad_norm": 38.266258239746094, "elapsed_s": 2749.9}
+{"step": 410, "split": "train", "train_loss": 0.6375062679406256, "train_reward_acc": 0.63125, "train_reward_margin": 0.259646478202194, "grad_norm": 37.51583480834961, "elapsed_s": 2780.4}
+{"step": 415, "split": "train", "train_loss": 0.6355084628099575, "train_reward_acc": 0.63125, "train_reward_margin": 0.25892327854817265, "grad_norm": 42.619598388671875, "elapsed_s": 2810.8}
+{"step": 420, "split": "train", "train_loss": 0.665773198986426, "train_reward_acc": 0.64375, "train_reward_margin": 0.2046206661092583, "grad_norm": 39.2841796875, "elapsed_s": 2841.1}
+{"step": 425, "split": "train", "train_loss": 0.6164779879152775, "train_reward_acc": 0.64375, "train_reward_margin": 0.280703646177426, "grad_norm": 38.05392837524414, "elapsed_s": 2871.5}
+{"step": 430, "split": "train", "train_loss": 0.645551802450791, "train_reward_acc": 0.63125, "train_reward_margin": 0.22459943131543697, "grad_norm": 51.36181640625, "elapsed_s": 2902.6}
+{"step": 435, "split": "train", "train_loss": 0.6583132021129131, "train_reward_acc": 0.60625, "train_reward_margin": 0.20838146274909378, "grad_norm": 45.03217697143555, "elapsed_s": 2933.8}
+{"step": 440, "split": "train", "train_loss": 0.6584886035649106, "train_reward_acc": 0.61875, "train_reward_margin": 0.22429703720845282, "grad_norm": 41.770442962646484, "elapsed_s": 2964.7}
+{"step": 445, "split": "train", "train_loss": 0.6337354860268534, "train_reward_acc": 0.6375, "train_reward_margin": 0.22719158676918597, "grad_norm": 40.6785888671875, "elapsed_s": 2995.9}
+{"step": 450, "split": "train", "train_loss": 0.6726781107019633, "train_reward_acc": 0.60625, "train_reward_margin": 0.16334757022559643, "grad_norm": 45.65522766113281, "elapsed_s": 3026.7}
+{"step": 455, "split": "train", "train_loss": 0.7295470513403416, "train_reward_acc": 0.525, "train_reward_margin": 0.10998409809544682, "grad_norm": 51.404502868652344, "elapsed_s": 3057.6}
+{"step": 460, "split": "train", "train_loss": 0.6328849372919649, "train_reward_acc": 0.6375, "train_reward_margin": 0.2210463291965425, "grad_norm": 39.121673583984375, "elapsed_s": 3088.1}
+{"step": 465, "split": "train", "train_loss": 0.6220254897605628, "train_reward_acc": 0.6625, "train_reward_margin": 0.260278845729772, "grad_norm": 45.752986907958984, "elapsed_s": 3119.1}
+{"step": 469, "split": "val", "val_loss": 0.6292236422300339, "val_reward_acc": 0.6470000147819519, "val_reward_margin": 0.27447500824928284, "val_chosen_reward": -0.36337995529174805, "val_rejected_reward": -0.6378549933433533, "elapsed_s": 3186.1}
+{"step": 469, "event": "done", "best_val_reward_acc": 0.6499999761581421, "elapsed_s": 3187.7}

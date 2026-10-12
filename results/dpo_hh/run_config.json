@@ -1,0 +1,28 @@
+{
+ "n_train": 15000,
+ "n_val": 1000,
+ "args": {
+  "sft_path": "/kaggle/input/notebooks/areejfatimaaa/pa2-01-baseline-sft/small-model-alignment/outputs/sft/best",
+  "dataset": "hh",
+  "output_dir": "outputs/dpo_hh",
+  "n_train": 15000,
+  "n_val": 1000,
+  "max_length": 512,
+  "max_prompt_length": 256,
+  "batch_size": 1,
+  "eval_batch_size": 4,
+  "grad_accum": 32,
+  "lr": 1e-06,
+  "beta": 0.1,
+  "optimizer": "rmsprop",
+  "max_grad_norm": 1.0,
+  "epochs": 1,
+  "eval_every": 100,
+  "log_every": 5,
+  "seed": 42,
+  "policy_device": "cuda:0",
+  "reference_device": "cuda:1",
+  "gradient_checkpointing": false,
+  "amp": true
+ }
+}

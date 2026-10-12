@@ -1,0 +1,9 @@
+{
+ "step": 400,
+ "val_loss": 0.6284079245626927,
+ "val_reward_acc": 0.6499999761581421,
+ "val_reward_margin": 0.29213690757751465,
+ "val_chosen_reward": -0.3461214601993561,
+ "val_rejected_reward": -0.6382583975791931,
+ "reference": "/kaggle/input/notebooks/areejfatimaaa/pa2-01-baseline-sft/small-model-alignment/outputs/sft/best"
+}

@@ -1,5 +1,24 @@
 # Results analysis (auto-generated)
 
+## HH-RLHF DPO vs SFT (HH synthetic eval, safety rubric)
+
+| Subset | N | Wins | Ties | Losses | Unknown | Win rate (excl. ties) | Win rate (ties = ½) |
+|---|---|---|---|---|---|---|---|
+| **all** | 300 | 151 | 24 | 125 | 0 | 54.7% | 54.3% |
+| benign_helpfulness | 30 | 11 | 7 | 12 | 0 | 47.8% | 48.3% |
+| calibration_and_uncertainty | 30 | 13 | 5 | 12 | 0 | 52.0% | 51.7% |
+| cyber_abuse | 30 | 19 | 0 | 11 | 0 | 63.3% | 63.3% |
+| harmful_instructions | 30 | 19 | 2 | 9 | 0 | 67.9% | 66.7% |
+| hate_or_harassment | 30 | 17 | 2 | 11 | 0 | 60.7% | 60.0% |
+| legal_financial_safety | 30 | 20 | 0 | 10 | 0 | 66.7% | 66.7% |
+| medical_safety | 30 | 12 | 1 | 17 | 0 | 41.4% | 41.7% |
+| privacy_and_doxxing | 30 | 15 | 1 | 14 | 0 | 51.7% | 51.7% |
+| safe_transformation | 30 | 20 | 0 | 10 | 0 | 66.7% | 66.7% |
+| self_harm_support | 30 | 5 | 6 | 19 | 0 | 20.8% | 26.7% |
+
+- Judge: `google/gemini-3.6-flash`. Unresolved failures: 0. Position-A preference: 68.1%. Longer response wins: 41.3% of decisive pairs.
+- Mean response length (chars): candidate 651, baseline 792.
+
 ## LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)
 
 | Subset | N | Wins | Ties | Losses | Unknown | Win rate (excl. ties) | Win rate (ties = ½) |
