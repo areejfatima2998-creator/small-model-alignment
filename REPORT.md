@@ -43,7 +43,7 @@ TODO: replace guide values with the values actually used if anything changed.
 
 **Generation:**
 - Qwen models: greedy, `max_new_tokens=384`, `repetition_penalty=1.1`, no sampling, the prompt template above, stop at EOS.
-- Persona models: greedy, `max_new_tokens=256`, `repetition_penalty=1.1`, chat template.
+- Persona models: greedy, `max_new_tokens=384`, `repetition_penalty=1.1`, chat template.
 - Settings are identical within each comparison and saved next to each generation file (`*_settings.json`).
 
 **Loss reductions:**
