@@ -3,7 +3,7 @@
 > Draft. Sections marked **TODO** are filled in from the Kaggle outputs. Export to PDF (≤ 8 pages) for submission.
 
 ## 1. Repository, Models, and Data
-- **Repository:** TODO (GitHub URL)
+- **Repository:** https://github.com/areejfatima2998-creator/small-model-alignment
 - **Base model:** `Qwen/Qwen2.5-0.5B`. **Persona model:** `HuggingFaceTB/SmolLM2-360M-Instruct`.
 - **SFT data:** `HuggingFaceH4/ultrachat_200k`. Train examples come from `train_sft` and validation from `test_sft`. Each split is shuffled with seed 42. Only the first user turn and first assistant reply are kept. Examples with a prompt longer than 256 tokens are dropped. Size: 30,000 train / 1,000 val.
 - **HH-RLHF DPO:** `Anthropic/hh-rlhf` (all subsets; `train` / `test`). Only single-turn pairs are kept, meaning exactly one `Human:` and one `Assistant:` turn. Pairs are dropped if the two prompts differ, if the chosen and rejected responses are identical, or if either response is empty. Size: 15,000 / 1,000.
