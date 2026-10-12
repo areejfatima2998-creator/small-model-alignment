@@ -17,7 +17,7 @@ Notebook settings for 01–04: **Accelerator: GPU T4 x2**, **Internet: On**.
 | `02_dpo_hh` | repo + **01 output** | ~2.5 h | `outputs/dpo_hh/{best,final}`, `dpo_hh.json`, `dpo_hh_vs_sft_pairs.jsonl` |
 | `03_dpo_ultrafeedback` | repo + **01 output** | ~2.5 h | `outputs/dpo_uf/{best,final}`, `dpo_uf.json`, `dpo_uf_vs_sft_pairs.jsonl` |
 | `04_lora_persona` | repo | ~0.3 h | LoRA adapter, persona generations, `lora_vs_base_pairs.jsonl` |
-| `05_judge` (Benchmarks notebook) | repo + **02, 03, 04 outputs** | CPU, ~0.5–1 h | `*_judged.jsonl`, `*_summary.json`, `*_failures.jsonl` |
+| judging (Kaggle Benchmarks task) | pair files from 02, 03, 04 | no GPU, ~0.5–1 h | `*_judged.jsonl`, `*_summary.json`, `*_failures.jsonl` |
 
 You can run 02, 03 and 04 **in parallel** once 01 has finished.
 
@@ -41,3 +41,15 @@ PYTHONPATH=. python scripts/plot_metrics.py --sft results/sft/metrics.jsonl \
 - **CUDA OOM in DPO:** add `--gradient_checkpointing`. Changing `--max_length` would deviate from the guide, so report it if you do.
 - **OOM in SFT:** add `--gradient_checkpointing`, or use `--batch_size 1 --grad_accum 32` (same effective batch of 32).
 - **Kaggle disconnects during judging:** attach the 05 output and rerun. `--reuse_judgments` skips pairs that are already judged.
+
+## Judging via Kaggle Benchmarks (used for the submitted results)
+Local model-proxy credentials only expose a few judge models. To use `gemini-3.6-flash`, the judge runs as a Kaggle-side benchmark task, with the same batching, retry, blinding and checkpoint logic as `judge_pairwise_kaggle.py`:
+
+```bash
+python scripts/make_judge_task.py --out judge_task.py --pairs   dpo_uf_vs_sft:general:outputs/eval/dpo_uf_vs_sft_pairs.jsonl   dpo_hh_vs_sft:safety:outputs/eval/dpo_hh_vs_sft_pairs.jsonl   lora_vs_base_style:persona:outputs/eval/lora_vs_base_pairs.jsonl   lora_vs_base_usefulness:usefulness:outputs/eval/lora_vs_base_pairs.jsonl
+kaggle b t push pa2-pairwise-judge -f judge_task.py --wait
+kaggle b t run pa2-pairwise-judge -m gemini-3.6-flash --wait
+kaggle b t log pa2-pairwise-judge -m gemini-3.6-flash > judge.log
+python scripts/collect_judgments.py --log judge.log --out_dir outputs/eval --pairs_dir outputs/eval
+```
+To resume, rebuild the task with `--skip name:outputs/eval/<name>_judged.jsonl` so already-judged pairs are excluded. Then run it again and collect the results.

@@ -98,9 +98,10 @@ class KaggleJudge:
         self.kbench = kbench
         try:
             self.llm = kbench.llms[model_name]
-        except Exception as exc:  # name not available in this environment
-            print(f"[judge] could not select {model_name!r} ({exc}); falling back to kbench.llm")
-            self.llm = kbench.llm
+        except KeyError:
+            # Never fall back silently: the report must name the judge that actually ran.
+            available = os.environ.get("LLMS_AVAILABLE", "").replace(",", ", ")
+            raise SystemExit(f"judge model {model_name!r} is not available here. Available: {available}")
         self._task = None
 
     def __call__(self, prompt):
@@ -132,6 +133,50 @@ class MockJudge:
         return json.dumps(out)
 
 
+def outcome_record(pair, verdict, reason, rubric, judge_model, attempts):
+    """Translate an A/B verdict back to the hidden model identities."""
+    hidden = pair["hidden"]
+    if verdict in ("tie", "unknown"):
+        outcome = verdict
+    else:
+        winner_model = hidden["model_a"] if verdict == "A" else hidden["model_b"]
+        outcome = "win" if winner_model == hidden["candidate"] else "loss"
+    return {
+        "pair_id": pair["pair_id"], "verdict": verdict, "outcome": outcome, "reason": reason,
+        "candidate": hidden["candidate"], "baseline": hidden["baseline"],
+        "candidate_position": "A" if hidden["model_a"] == hidden["candidate"] else "B",
+        "category": hidden.get("category", ""), "judge_model": judge_model, "rubric": rubric,
+        "attempts": attempts,
+    }
+
+
+def judge_pairs(call, pairs, rubric, judge_model, batch_size, sleep_seconds, max_retries, checkpoint):
+    """Judge pairs in small batches with retries; ``checkpoint(records, failures)`` after each batch."""
+    for start in range(0, len(pairs), batch_size):
+        chunk = pairs[start : start + batch_size]
+        prompt = build_prompt(chunk, rubric)
+        error, reply = None, ""
+        for attempt in range(1, max_retries + 1):
+            try:
+                reply = call(prompt)
+                verdicts, reasons = parse_verdicts(reply, len(chunk))
+                break
+            except Exception as exc:
+                error = f"{type(exc).__name__}: {exc}"
+                print(f"[batch {start // batch_size}] attempt {attempt} failed: {error}")
+                time.sleep(sleep_seconds)
+        else:
+            checkpoint([], [
+                {"pair_id": pr["pair_id"], "error": error, "attempts": max_retries, "last_reply": reply[:2000]}
+                for pr in chunk
+            ])
+            continue
+        records = [outcome_record(pr, v, r, rubric, judge_model, attempt) for pr, v, r in zip(chunk, verdicts, reasons)]
+        checkpoint(records, [])
+        print(f"judged {start + len(chunk)}/{len(pairs)}", flush=True)
+        time.sleep(sleep_seconds)
+
+
 # ------------------------------------------------------------------ main loop
 
 def read_jsonl(path):
@@ -142,6 +187,8 @@ def read_jsonl(path):
 
 
 def append_jsonl(path, records):
+    if not records:
+        return
     with open(path, "a", encoding="utf-8") as f:
         for r in records:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
@@ -203,46 +250,11 @@ def main():
     judge = MockJudge() if args.backend == "mock" else KaggleJudge(args.judge_model)
     sleep = 0 if args.backend == "mock" else args.sleep_seconds
 
-    for start in range(0, len(todo), args.batch_size):
-        chunk = todo[start : start + args.batch_size]
-        prompt = build_prompt(chunk, args.rubric)
-        error, reply = None, ""
-        for attempt in range(1, args.max_retries + 1):
-            try:
-                reply = judge(prompt)
-                verdicts, reasons = parse_verdicts(reply, len(chunk))
-                break
-            except Exception as exc:
-                error = f"{type(exc).__name__}: {exc}"
-                print(f"[batch {start // args.batch_size}] attempt {attempt} failed: {error}")
-                time.sleep(sleep)
-        else:
-            append_jsonl(failure_path, [
-                {"pair_id": pr["pair_id"], "error": error, "attempts": args.max_retries, "last_reply": reply[:2000]}
-                for pr in chunk
-            ])
-            continue
-
-        records = []
-        for pr, verdict, reason in zip(chunk, verdicts, reasons):
-            hidden = pr["hidden"]
-            if verdict == "tie":
-                outcome = "tie"
-            elif verdict == "unknown":
-                outcome = "unknown"
-            else:
-                winner_model = hidden["model_a"] if verdict == "A" else hidden["model_b"]
-                outcome = "win" if winner_model == hidden["candidate"] else "loss"
-            records.append({
-                "pair_id": pr["pair_id"], "verdict": verdict, "outcome": outcome, "reason": reason,
-                "candidate": hidden["candidate"], "baseline": hidden["baseline"],
-                "candidate_position": "A" if hidden["model_a"] == hidden["candidate"] else "B",
-                "category": hidden.get("category", ""), "judge_model": args.judge_model, "rubric": args.rubric,
-                "attempts": attempt,
-            })
+    def checkpoint(records, failures):
         append_jsonl(args.output_path, records)  # checkpoint after every batch
-        print(f"judged {len(done) + start + len(chunk)}/{len(pairs)}")
-        time.sleep(sleep)
+        append_jsonl(failure_path, failures)
+
+    judge_pairs(judge, todo, args.rubric, args.judge_model, args.batch_size, sleep, args.max_retries, checkpoint)
 
     summary = summarize(read_jsonl(args.output_path), read_jsonl(failure_path), len(pairs))
     summary.update(judge_model=args.judge_model, rubric=args.rubric, pairs_path=args.pairs_path)
