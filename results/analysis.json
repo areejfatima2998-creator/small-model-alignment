@@ -1,0 +1,120 @@
+{
+ "lora_vs_base_style": {
+  "label": "LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)",
+  "overall": {
+   "n": 24,
+   "win": 14,
+   "tie": 1,
+   "loss": 9,
+   "unknown": 0,
+   "win_rate_excl_ties": 0.6086956521739131,
+   "win_rate_ties_half": 0.6041666666666666
+  },
+  "by_category": {
+   "coding": {
+    "n": 6,
+    "win": 3,
+    "tie": 0,
+    "loss": 3,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5,
+    "win_rate_ties_half": 0.5
+   },
+   "cooking": {
+    "n": 6,
+    "win": 3,
+    "tie": 0,
+    "loss": 3,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5,
+    "win_rate_ties_half": 0.5
+   },
+   "general_help": {
+    "n": 6,
+    "win": 3,
+    "tie": 1,
+    "loss": 2,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6,
+    "win_rate_ties_half": 0.5833333333333334
+   },
+   "safety": {
+    "n": 6,
+    "win": 5,
+    "tie": 0,
+    "loss": 1,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.8333333333333334,
+    "win_rate_ties_half": 0.8333333333333334
+   }
+  },
+  "unresolved_failures": 0,
+  "failure_records": 0,
+  "position_A_preference_rate": 0.5217391304347826,
+  "longer_response_wins_rate": 0.6086956521739131,
+  "mean_length": {
+   "candidate_chars": 768.8333333333334,
+   "baseline_chars": 941.7083333333334
+  },
+  "judge_model": "google/gemini-3.6-flash"
+ },
+ "lora_vs_base_usefulness": {
+  "label": "LoRA-DPO vs SmolLM2-Instruct (usefulness-only rubric)",
+  "overall": {
+   "n": 24,
+   "win": 8,
+   "tie": 0,
+   "loss": 16,
+   "unknown": 0,
+   "win_rate_excl_ties": 0.3333333333333333,
+   "win_rate_ties_half": 0.3333333333333333
+  },
+  "by_category": {
+   "coding": {
+    "n": 6,
+    "win": 3,
+    "tie": 0,
+    "loss": 3,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5,
+    "win_rate_ties_half": 0.5
+   },
+   "cooking": {
+    "n": 6,
+    "win": 0,
+    "tie": 0,
+    "loss": 6,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.0,
+    "win_rate_ties_half": 0.0
+   },
+   "general_help": {
+    "n": 6,
+    "win": 1,
+    "tie": 0,
+    "loss": 5,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.16666666666666666,
+    "win_rate_ties_half": 0.16666666666666666
+   },
+   "safety": {
+    "n": 6,
+    "win": 4,
+    "tie": 0,
+    "loss": 2,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.6666666666666666,
+    "win_rate_ties_half": 0.6666666666666666
+   }
+  },
+  "unresolved_failures": 0,
+  "failure_records": 0,
+  "position_A_preference_rate": 0.5416666666666666,
+  "longer_response_wins_rate": 0.4583333333333333,
+  "mean_length": {
+   "candidate_chars": 768.8333333333334,
+   "baseline_chars": 941.7083333333334
+  },
+  "judge_model": "google/gemini-3.6-flash"
+ }
+}
