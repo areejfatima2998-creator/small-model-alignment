@@ -35,6 +35,21 @@
 | safe_transformation | 30 | 13 | 7 | 10 | 56.5% | 55.0% |
 | self_harm_support | 30 | 0 | 11 | 19 | 0.0% | 18.3% |
 
+## UltraFeedback DPO vs SFT (AlpacaEval-300, general rubric)
+
+| Subset | N | Wins | Ties | Losses | Unknown | Win rate (excl. ties) | Win rate (ties = ½) |
+|---|---|---|---|---|---|---|---|
+| **all** | 297 | 151 | 9 | 137 | 0 | 52.4% | 52.4% |
+
+- Judge: `google/gemini-3.6-flash`. Unresolved failures: 0. Position-A preference: 63.9%. Longer response wins: 48.4% of decisive pairs.
+- Mean response length (chars): candidate 1180, baseline 806.
+
+**Order-swapped re-judgment.** Verdict agreement across the two orders: 93.3%. Swapped order alone: 146W / 9T / 143L. A win or loss counts only when it holds in both orders (otherwise it is a tie):
+
+| Subset | N | Wins | Ties | Losses | Win rate (excl. ties) | Win rate (ties = ½) |
+|---|---|---|---|---|---|---|
+| **all** | 297 | 139 | 28 | 130 | 51.7% | 51.5% |
+
 ## LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)
 
 | Subset | N | Wins | Ties | Losses | Unknown | Win rate (excl. ties) | Win rate (ties = ½) |

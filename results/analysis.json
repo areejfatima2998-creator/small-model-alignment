@@ -225,6 +225,70 @@
   },
   "judge_model": "google/gemini-3.6-flash"
  },
+ "dpo_uf_vs_sft": {
+  "label": "UltraFeedback DPO vs SFT (AlpacaEval-300, general rubric)",
+  "overall": {
+   "n": 297,
+   "win": 151,
+   "tie": 9,
+   "loss": 137,
+   "unknown": 0,
+   "win_rate_excl_ties": 0.5243055555555556,
+   "win_rate_ties_half": 0.5235690235690236
+  },
+  "by_category": {
+   "all": {
+    "n": 297,
+    "win": 151,
+    "tie": 9,
+    "loss": 137,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5243055555555556,
+    "win_rate_ties_half": 0.5235690235690236
+   }
+  },
+  "order_debiased": {
+   "overall": {
+    "n": 297,
+    "win": 139,
+    "tie": 28,
+    "loss": 130,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.516728624535316,
+    "win_rate_ties_half": 0.5151515151515151
+   },
+   "consistency": 0.9326599326599326,
+   "by_category": {
+    "all": {
+     "n": 297,
+     "win": 139,
+     "tie": 28,
+     "loss": 130,
+     "unknown": 0,
+     "win_rate_excl_ties": 0.516728624535316,
+     "win_rate_ties_half": 0.5151515151515151
+    }
+   },
+   "swapped_overall": {
+    "n": 298,
+    "win": 146,
+    "tie": 9,
+    "loss": 143,
+    "unknown": 0,
+    "win_rate_excl_ties": 0.5051903114186851,
+    "win_rate_ties_half": 0.5050335570469798
+   }
+  },
+  "unresolved_failures": 0,
+  "failure_records": 0,
+  "position_A_preference_rate": 0.6388888888888888,
+  "longer_response_wins_rate": 0.4843205574912892,
+  "mean_length": {
+   "candidate_chars": 1180.016835016835,
+   "baseline_chars": 806.4882154882155
+  },
+  "judge_model": "google/gemini-3.6-flash"
+ },
  "lora_vs_base_style": {
   "label": "LoRA-DPO vs SmolLM2-Instruct (persona-style rubric)",
   "overall": {
